@@ -1,0 +1,60 @@
+#creator{
+position: absolute;
+background-color: bisque;
+border: 2px black solid;
+width: 10vw;
+height: 2vh;
+text-align: center;
+margin-top: 46%;
+}
+
+#startButton {
+    position: absolute;
+ width: 20%;
+ margin-left: 37.5%;
+ margin-top: 32%
+}
+
+#continueButton{
+    position: absolute;
+    margin-left: 36vw;
+    margin-top: 81vh;
+}
+
+.mainButtons{
+    width: 20vw;
+    position: absolute;
+    margin-top: 86vh;
+    display: none;
+}
+
+#counterButton{
+    margin-left: 15vw;
+    
+}
+
+#workshopButton{
+    margin-left: 65vw;
+    
+}
+
+#Lore{
+    display: none;
+}
+
+#mainMenu{
+    display: block;
+}
+
+#loreText{
+    color: aliceblue;
+}
+
+#loreBorder{
+    text-align: center;
+    font-size: 30px;
+    width: 50vw;
+    margin-left: 24vw;
+    margin-top: 2vh;
+    position: absolute;
+}
