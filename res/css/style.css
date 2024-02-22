@@ -21,6 +21,14 @@
     margin-top: 80vh;
 }
 
+#continueButton1{
+    position: absolute;
+    display: none;
+    margin-left: 36vw;
+    margin-top: 11.5vh;
+    z-index: 1;
+}
+
 .mainButtons {
     width: 20vw;
     position: absolute;
@@ -62,10 +70,25 @@
 
 #prolog {
     position: absolute;
+    display: none;
     background-color: bisque;
     width: 50vw;
+    height: 12vh;
     border: 2px black solid;
     text-align: center;
-    margin-left: 25vw;
+    margin-left: 24vw;
     margin-top: 5vh;
+}
+
+#part1{
+    position: absolute;
+    display: none;
+    background-color: bisque;
+    width: 50vw;
+    height: 27vh;
+    margin-left: 24vw;
+    margin-top: 5vh;
+    border: 2px black solid;
+    text-align: center;
+
 }
