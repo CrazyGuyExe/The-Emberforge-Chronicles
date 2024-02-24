@@ -12,13 +12,15 @@
     position: absolute;
     width: 20%;
     margin-left: 37.5%;
-    margin-top: 32%
+    margin-top: 32%;
+    cursor: pointer;
 }
 
 #continueButton {
     position: absolute;
     margin-left: 36vw;
     margin-top: 80vh;
+    cursor: pointer;
 }
 
 #continueButton1{
@@ -27,6 +29,7 @@
     margin-left: 36vw;
     margin-top: 11.5vh;
     z-index: 1;
+    cursor: pointer;
 }
 
 .mainButtons {
@@ -34,6 +37,7 @@
     position: absolute;
     margin-top: 85vh;
     display: none;
+    cursor: pointer;
 }
 
 #counterButton {
@@ -86,6 +90,32 @@
     background-color: bisque;
     width: 50vw;
     height: 27vh;
+    margin-left: 24vw;
+    margin-top: 5vh;
+    border: 2px black solid;
+    text-align: center;
+
+}
+
+#part2{
+    position: absolute;
+    display: none;
+    background-color: bisque;
+    width: 50vw;
+    height: 22vh;
+    margin-left: 24vw;
+    margin-top: 5vh;
+    border: 2px black solid;
+    text-align: center;
+
+}
+
+#part3{
+    position: absolute;
+    display: none;
+    background-color: bisque;
+    width: 50vw;
+    height: 18vh;
     margin-left: 24vw;
     margin-top: 5vh;
     border: 2px black solid;
