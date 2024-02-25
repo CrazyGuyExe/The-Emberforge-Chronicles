@@ -1,2 +1,2 @@
 # The Emberforge Chronicles
-[View](https://github.com/CrazyGuyExe/The-Emberforge-Chronicles/)
+[View](https://crazyguyexe.github.io/The-Emberforge-Chronicles/)
