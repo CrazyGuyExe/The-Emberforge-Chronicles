@@ -26,8 +26,9 @@
 #continueButton1{
     position: absolute;
     display: none;
-    margin-left: 36vw;
-    margin-top: 11.5vh;
+    margin-left: 40vw;
+    margin-top: 13vh;
+    width: 17vw;
     z-index: 1;
     cursor: pointer;
 }
@@ -117,6 +118,18 @@
     width: 50vw;
     height: 18vh;
     margin-left: 24vw;
+    margin-top: 5vh;
+    border: 2px black solid;
+    text-align: center;
+
+}
+#part4{
+    position: absolute;
+    display: none;
+    background-color: bisque;
+    width: 30vw;
+    height: 50vh;
+    margin-left: 2vw;
     margin-top: 5vh;
     border: 2px black solid;
     text-align: center;
