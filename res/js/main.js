@@ -10,6 +10,8 @@ const prologPart2 = document.getElementById("part1");
 const prologPart3 = document.getElementById("part2");
 const prologPart4 = document.getElementById("part3");
 const prologPart5 = document.getElementById("part4");
+const Unknown = document.getElementsByClassName("UnknownPerson");
+const Rey = document.getElementById("Reynauld");
 
 const creator = document.getElementById("creator");
 
@@ -55,20 +57,20 @@ continueButton1.onclick = () => {
       document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
       prologPart3.style.display = "none";
       prologPart4.style.display = "block";
-      continueButton1.style.marginTop = "19vh"
+      continueButton1.style.marginTop = "19vh";
       break;
-      case 4:
-        document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";;
+    case 4:
+      document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";
       prologPart4.style.display = "none";
       prologPart5.style.display = "block";
-      continueButton1.style.marginTop = "51vh"
-      continueButton1.style.marginLeft = "8vw"
-     
-      break;
-      case 5:
-        prologPart4.style.display = "none";
-        prologPart5.style.display = "block";
+      continueButton1.style.marginTop = "51vh";
+      continueButton1.style.marginLeft = "8vw";
+      Unknown[0].style.display = "block";
 
+      break;
+    case 5:
+      Rey.style.display = "block";
+      Unknown[0].style.display = "none";
   }
 };
 

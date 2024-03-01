@@ -1,137 +1,144 @@
 #creator {
-    position: absolute;
-    background-color: bisque;
-    border: 2px black solid;
-    width: 10vw;
-    height: 2vh;
-    text-align: center;
-    margin-top: 46%;
+  position: absolute;
+  background-color: bisque;
+  border: 2px black solid;
+  width: 10vw;
+  height: 2vh;
+  text-align: center;
+  margin-top: 46%;
 }
 
 #startButton {
-    position: absolute;
-    width: 20%;
-    margin-left: 37.5%;
-    margin-top: 32%;
-    cursor: pointer;
+  position: absolute;
+  width: 20%;
+  margin-left: 37.5%;
+  margin-top: 32%;
+  cursor: pointer;
 }
 
 #continueButton {
-    position: absolute;
-    margin-left: 36vw;
-    margin-top: 80vh;
-    cursor: pointer;
+  position: absolute;
+  margin-left: 36vw;
+  margin-top: 80vh;
+  cursor: pointer;
 }
 
-#continueButton1{
-    position: absolute;
-    display: none;
-    margin-left: 40vw;
-    margin-top: 13vh;
-    width: 17vw;
-    z-index: 1;
-    cursor: pointer;
+#continueButton1 {
+  position: absolute;
+  display: none;
+  margin-left: 40vw;
+  margin-top: 13vh;
+  width: 17vw;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .mainButtons {
-    width: 20vw;
-    position: absolute;
-    margin-top: 85vh;
-    display: none;
-    cursor: pointer;
+  width: 20vw;
+  position: absolute;
+  margin-top: 85vh;
+  display: none;
+  cursor: pointer;
 }
 
 #counterButton {
-    margin-left: 15vw;
-
-
+  margin-left: 15vw;
 }
 
 #workshopButton {
-    margin-left: 65vw;
-
+  margin-left: 65vw;
 }
 
 #Lore {
-    display: none;
+  display: none;
 }
 
 #mainMenu {
-    display: block;
+  display: block;
 }
 
 #loreText {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 #loreBorder {
-    text-align: center;
-    font-size: 30px;
-    width: 50vw;
-    margin-left: 24vw;
-    margin-top: 2vh;
-    position: absolute;
+  text-align: center;
+  font-size: 30px;
+  width: 50vw;
+  margin-left: 24vw;
+  margin-top: 2vh;
+  position: absolute;
 }
 
 #prolog {
-    position: absolute;
-    display: none;
-    background-color: bisque;
-    width: 50vw;
-    height: 12vh;
-    border: 2px black solid;
-    text-align: center;
-    margin-left: 24vw;
-    margin-top: 5vh;
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  width: 50vw;
+  height: 12vh;
+  border: 2px black solid;
+  text-align: center;
+  margin-left: 24vw;
+  margin-top: 5vh;
 }
 
-#part1{
-    position: absolute;
-    display: none;
-    background-color: bisque;
-    width: 50vw;
-    height: 27vh;
-    margin-left: 24vw;
-    margin-top: 5vh;
-    border: 2px black solid;
-    text-align: center;
-
+#part1 {
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  width: 50vw;
+  height: 27vh;
+  margin-left: 24vw;
+  margin-top: 5vh;
+  border: 2px black solid;
+  text-align: center;
 }
 
-#part2{
-    position: absolute;
-    display: none;
-    background-color: bisque;
-    width: 50vw;
-    height: 22vh;
-    margin-left: 24vw;
-    margin-top: 5vh;
-    border: 2px black solid;
-    text-align: center;
-
+#part2 {
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  width: 50vw;
+  height: 22vh;
+  margin-left: 24vw;
+  margin-top: 5vh;
+  border: 2px black solid;
+  text-align: center;
 }
 
-#part3{
-    position: absolute;
-    display: none;
-    background-color: bisque;
-    width: 50vw;
-    height: 18vh;
-    margin-left: 24vw;
-    margin-top: 5vh;
-    border: 2px black solid;
-    text-align: center;
-
+#part3 {
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  width: 50vw;
+  height: 18vh;
+  margin-left: 24vw;
+  margin-top: 5vh;
+  border: 2px black solid;
+  text-align: center;
 }
-#part4{
-    position: absolute;
-    display: none;
-    background-color: bisque;
-    width: 30vw;
-    height: 50vh;
-    margin-left: 2vw;
-    margin-top: 5vh;
-    border: 2px black solid;
-    text-align: center;
+#part4 {
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  width: 30vw;
+  height: 50vh;
+  margin-left: 2vw;
+  margin-top: 5vh;
+  border: 2px black solid;
+  text-align: center;
+}
 
+.UnknownPerson {
+  position: absolute;
+  margin-left: 37vw;
+  margin-top: 25vh;
+  display: none;
+}
+
+#Reynauld {
+  position: absolute;
+  margin-left: 37vw;
+  margin-top: 25.5vh;
+  display: none;
 }
