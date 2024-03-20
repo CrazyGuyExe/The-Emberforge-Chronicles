@@ -53,8 +53,7 @@ continueButton1.onclick = () => {
       prologPart2.style.display = "none";
       prologPart3.style.display = "block";
       continueButton1.style.marginTop = "23vh";
-      mainButtons[0].style.display = "block";
-      mainButtons[1].style.display = "block";
+
       break;
     case 3:
       document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
@@ -78,19 +77,29 @@ continueButton1.onclick = () => {
       prologPart5.style.display = "none";
       prologPart6.style.display = "block";
       continueButton1.style.display = "none";
+      mainButtons[0].style.display = "block";
+      mainButtons[1].style.display = "block";
+      mainButtons[2].style.display = "block";
+      mainButtons[0].onclick = () => {
+
+        document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";
+        counterViewT.style.display = "block";
+        workshopViewT.style.display = "none";
+
+      };
+      mainButtons[1].onclick = () => {
+        document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
+        counterViewT.style.display = "none";
+        workshopViewT.style.display = "block";
+
+      };
+      mainButtons[2].onclick = () => {
+       mainButtons[2].style.display = "none";
+       
+
+      };
+
       break;
   }
 };
 
-mainButtons[0].onclick = () => {
-  document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";
-  counterViewT.style.display = "block";
-  workshopViewT.style.display = "none";
-  continueButton1.style.display = "block";
-};
-mainButtons[1].onclick = () => {
-  document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
-  counterViewT.style.display = "none";
-  workshopViewT.style.display = "block";
-  continueButton1.style.display = "none";
-};

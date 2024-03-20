@@ -117,6 +117,7 @@
   border: 2px black solid;
   text-align: center;
 }
+
 #part4 {
   position: absolute;
   display: none;
@@ -128,6 +129,7 @@
   border: 2px black solid;
   text-align: center;
 }
+
 #part5 {
   position: absolute;
   display: none;
@@ -151,5 +153,10 @@
   position: absolute;
   margin-left: 37vw;
   margin-top: 25.5vh;
+  display: none;
+}
+
+#orderButton{
+  position: absolute;
   display: none;
 }
