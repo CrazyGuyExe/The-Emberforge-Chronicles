@@ -160,3 +160,8 @@
   position: absolute;
   display: none;
 }
+
+#minimize{
+  position: absolute;
+  display: none;
+}
