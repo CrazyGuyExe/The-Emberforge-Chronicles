@@ -2,6 +2,7 @@ const startButton = document.getElementById("startButton");
 const continueButton = document.getElementById("continueButton");
 const continueButton1 = document.getElementById("continueButton1");
 const mainButtons = document.getElementsByClassName("mainButtons");
+const arrowButton = document.getElementById("arrow")
 
 const mainMenu = document.getElementById("mainMenu");
 const counterViewT = document.getElementById("couterT");
@@ -80,18 +81,20 @@ continueButton1.onclick = () => {
       mainButtons[0].style.display = "block";
       mainButtons[1].style.display = "block";
       mainButtons[2].style.display = "block";
+      
       mainButtons[0].onclick = () => {
 
         document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";
         counterViewT.style.display = "block";
         workshopViewT.style.display = "none";
+        arrowButton.style.display = "none";
 
       };
       mainButtons[1].onclick = () => {
         document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
         counterViewT.style.display = "none";
         workshopViewT.style.display = "block";
-
+        arrowButton.style.display = "block";
       };
       mainButtons[2].onclick = () => {
        mainButtons[2].style.display = "none";
@@ -100,6 +103,11 @@ continueButton1.onclick = () => {
       };
 
       break;
+  }
+  arrowButton.onclick = () => {
+    document.body.style.backgroundImage = "url(./res/img/forgeView.jpg)";
+    workshopViewT.style.display = "none";
+
   }
 };
 
