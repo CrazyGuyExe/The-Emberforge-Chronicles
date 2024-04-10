@@ -165,6 +165,10 @@
 #minimize{
   position: absolute;
   display: none;
+  margin-left: 1vw;
+  margin-top: 1vh;
+  cursor: pointer;
+
 }
 
 #arrow{
@@ -173,5 +177,27 @@
   width: 10vh;
   margin-left: 90vw;
   margin-top: 90vh;
+  cursor: pointer;
+}
+
+#orders{
+  position: absolute;
+  display: none;
+  background-color: bisque;
+  border: 2px solid black;
+  width: 20vw;
+  height: 50vh;
+  margin-left: 77vw;
+  margin-top: 5vh;
+  
+}
+
+#miniOrder{
+  width: 12vw;
+  margin-left: 81vw;
+  margin-top: 1vh;
+  rotate: 30deg;
+  position: absolute;
+  display: none;
   cursor: pointer;
 }

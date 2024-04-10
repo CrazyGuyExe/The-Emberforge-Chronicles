@@ -2,7 +2,9 @@ const startButton = document.getElementById("startButton");
 const continueButton = document.getElementById("continueButton");
 const continueButton1 = document.getElementById("continueButton1");
 const mainButtons = document.getElementsByClassName("mainButtons");
-const arrowButton = document.getElementById("arrow")
+const arrowButton = document.getElementById("arrow");
+const minimizeButton = document.getElementById("minimize");
+const scrollButton = document.getElementById("miniOrder");
 
 const mainMenu = document.getElementById("mainMenu");
 const counterViewT = document.getElementById("couterT");
@@ -14,6 +16,7 @@ const prologPart3 = document.getElementById("part2");
 const prologPart4 = document.getElementById("part3");
 const prologPart5 = document.getElementById("part4");
 const prologPart6 = document.getElementById("part5");
+const order = document.getElementById("orders");
 
 const Unknown = document.getElementsByClassName("UnknownPerson");
 const Rey = document.getElementById("Reynauld");
@@ -22,6 +25,7 @@ const creator = document.getElementById("creator");
 
 let gameOn = 0;
 let numberOfClicks = 0;
+let orderNumber = 0;
 
 window.onload = () => {
   document.body.style.backgroundImage = "url(./res/img/mainMenu.jpg)";
@@ -81,25 +85,34 @@ continueButton1.onclick = () => {
       mainButtons[0].style.display = "block";
       mainButtons[1].style.display = "block";
       mainButtons[2].style.display = "block";
-      
-      mainButtons[0].onclick = () => {
 
+      mainButtons[0].onclick = () => {
         document.body.style.backgroundImage = "url(./res/img/shopView.jpg)";
         counterViewT.style.display = "block";
         workshopViewT.style.display = "none";
         arrowButton.style.display = "none";
-
+        if (orderNumber % 2 == 0) {
+          mainButtons[2].style.display = "block";
+        } else {
+          mainButtons[2].style.display = "none";
+        }
       };
       mainButtons[1].onclick = () => {
         document.body.style.backgroundImage = "url(./res/img/workshopView.png)";
         counterViewT.style.display = "none";
         workshopViewT.style.display = "block";
         arrowButton.style.display = "block";
+        mainButtons[2].style.display = "none";
       };
       mainButtons[2].onclick = () => {
-       mainButtons[2].style.display = "none";
-       
-
+        mainButtons[2].style.display = "none";
+        prologPart6.style.display = "none";
+        order.style.display = "block";
+        minimizeButton.style.display = "block";
+        orderNumber++;
+        let m = Math.floor(Math.random() * 3 + 1);
+        let t = Math.floor(Math.random() * 3 + 1);
+        let st = Math.floor(Math.random() * 2 + 1);
       };
 
       break;
@@ -107,7 +120,15 @@ continueButton1.onclick = () => {
   arrowButton.onclick = () => {
     document.body.style.backgroundImage = "url(./res/img/forgeView.jpg)";
     workshopViewT.style.display = "none";
+  };
 
+  minimizeButton.onclick = () => {
+    order.style.display = "none";
+    scrollButton.style.display = "block";
+  };
+
+  scrollButton.onclick = () => {
+    order.style.display = "block";
+    scrollButton.style.display = "none";
   }
 };
-
