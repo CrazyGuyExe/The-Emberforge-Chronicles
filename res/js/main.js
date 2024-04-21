@@ -27,8 +27,17 @@ let gameOn = 0;
 let numberOfClicks = 0;
 let orderNumber = 0;
 
-window.onload = () => {
+window.onload = async () => {
   document.body.style.backgroundImage = "url(./res/img/mainMenu.jpg)";
+  try{const file = await fetch("./res/json/weapon.json");
+  const data = await file.json();
+  const file2 = await fetch("./res/json/customerParts.json");
+  const data2 = await file2.json();
+
+  }
+  catch(err){
+    location.reload();
+  }
 };
 
 startButton.onclick = () => {

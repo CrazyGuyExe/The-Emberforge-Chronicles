@@ -1,0 +1,40 @@
+{
+  "types": [
+    {
+      "axe": [
+        {
+          "name": "BattleAxe",
+          "img" : "./res/img/longSwordSchema.jpg"
+        },
+        {
+          "name": "Axe",
+          "img" : "./res/img/longSwordSchema.jpg"
+        }
+      ]
+    },
+    {
+      "sword": [
+        {
+          "name": "LongSword",
+          "img" : "./res/img/longSwordSchema.jpg"
+        },
+        {
+          "name": "ShortSword",
+          "img" : "./res/img/longSwordSchema.jpg"
+        }
+      ]
+    },
+    {
+      "pickaxe": [
+        {
+          "name": "Pickaxe",
+          "img" : "./res/img/longSwordSchema.jpg"
+        },
+        {
+          "name": "Pick",
+          "img" : "./res/img/longSwordSchema.jpg"
+        }
+      ]
+    }
+  ]
+}
