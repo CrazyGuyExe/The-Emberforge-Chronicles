@@ -1,7 +1,7 @@
 {
     "BodyParts": [
-      {
-        "head": [
+      
+      
           {
           
             "img" : "./res/img/longSwordSchema.jpg"
@@ -9,11 +9,11 @@
           {
            
             "img" : "./res/img/longSwordSchema.jpg"
-          }
-        ]
-      },
-      {
-        "torsoAndHands": [
+          },
+        
+      
+      
+  
           {
             
             "img" : "./res/img/longSwordSchema.jpg"
@@ -22,7 +22,8 @@
            
             "img" : "./res/img/longSwordSchema.jpg"
           }
-        ]
-      }
-    ]
+        
+      
+          
+         ]
   }

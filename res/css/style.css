@@ -1,3 +1,15 @@
+*{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: "fantasy";
+  src: url('../img/fantasy.otf');
+}
+
 #creator {
   position: absolute;
   background-color: bisque;
@@ -168,6 +180,11 @@
   margin-left: 1vw;
   margin-top: 1vh;
   cursor: pointer;
+  font-family: "fantasy";
+  font-size: 50px;
+  z-index: 3;
+  
+
 
 }
 
@@ -200,4 +217,13 @@
   position: absolute;
   display: none;
   cursor: pointer;
+}
+
+#partSchema{
+  
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50vh;
+  margin-left: 4vw;
 }
