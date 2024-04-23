@@ -7,7 +7,7 @@
         },
         {
           
-          "img" : "./res/img/longSwordSchema.jpg"
+          "img" : "./res/img/axe.png"
         },
       
     
@@ -15,7 +15,7 @@
      
         {
           
-          "img" : "./res/img/longSwordSchema.jpg"
+          "img" : "./res/img/longSwordSchema.png"
         },
         {
           
@@ -27,11 +27,11 @@
       
         {
          
-          "img" : "./res/img/longSwordSchema.jpg"
+          "img" : "./res/img/pickaxe.png"
         },
         {
           
-          "img" : "./res/img/longSwordSchema.jpg"
+          "img" : "./res/img/shovel.png"
         }
       ]
    
