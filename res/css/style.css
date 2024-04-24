@@ -1,4 +1,4 @@
-*{
+* {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "fantasy";
-  src: url('../img/fantasy.otf');
+  src: url("../img/fantasy.otf");
 }
 
 #creator {
@@ -168,13 +168,13 @@
   display: none;
 }
 
-#orderButton{
+#orderButton {
   position: absolute;
   display: none;
   margin-left: 40vw;
 }
 
-#minimize{
+#minimize {
   position: absolute;
   display: none;
   margin-left: 1vw;
@@ -183,12 +183,9 @@
   font-family: "fantasy";
   font-size: 50px;
   z-index: 3;
-  
-
-
 }
 
-#arrow{
+#arrow {
   position: absolute;
   display: none;
   width: 10vh;
@@ -197,7 +194,7 @@
   cursor: pointer;
 }
 
-#orders{
+#orders {
   position: absolute;
   display: none;
   background-color: bisque;
@@ -206,10 +203,9 @@
   height: 50vh;
   margin-left: 77vw;
   margin-top: 5vh;
-  
 }
 
-#miniOrder{
+#miniOrder {
   width: 12vw;
   margin-left: 81vw;
   margin-top: 1vh;
@@ -219,11 +215,9 @@
   cursor: pointer;
 }
 
-#partSchema{
-  
-  
+#partSchema {
   background-size: contain;
   background-repeat: no-repeat;
   height: 50vh;
-  margin-left: 4vw;
+  margin-left: 6vw;
 }

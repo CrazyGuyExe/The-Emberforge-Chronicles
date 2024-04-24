@@ -19,6 +19,8 @@ const prologPart6 = document.getElementById("part5");
 const order = document.getElementById("orders");
 
 const BA = document.getElementById("partSchema");
+const customerBody = document.getElementById("customerBody")
+const customerHead = document.getElementById("customerHead")
 
 const Unknown = document.getElementsByClassName("UnknownPerson");
 const Rey = document.getElementById("Reynauld");
@@ -28,32 +30,40 @@ const creator = document.getElementById("creator");
 let gameOn = 0;
 let numberOfClicks = 0;
 let orderNumber = 0;
+let y = Math.floor(Math.random() * 3 + 1);
 
 let dataWeapons = new Object();
 let dataCustomer = new Object();
-  
-
 
 window.onload = async () => {
   document.body.style.backgroundImage = "url(./res/img/mainMenu.jpg)";
-  try{
+  try {
     const file = await fetch("./res/json/weapon.json");
-    
+
     dataWeapons = await file.json();
-   
-    
+
     const file2 = await fetch("./res/json/customerParts.json");
-    
-     dataCustomer = await file2.json();
-  
-    }
-    catch(err){
-      location.reload();
-    }
-  
-  
-  
+
+    dataCustomer = await file2.json();
+  } catch (err) {
+    location.reload();
+  }
 };
+
+function headChosing(){
+  switch (y) {
+    case 1:
+      customerHead.style.backgroundImage = `url(${dataCustomer.head[0].img})`;
+      break;
+      case 2:
+        customerHead.style.backgroundImage = `url(${dataCustomer.head[1].img})`;
+      break;
+      case 3:
+        customerHead.style.backgroundImage = `url(${dataCustomer.head[2].img})`;
+        break;
+      }
+}
+
 
 startButton.onclick = () => {
   creator.style.display = "none";
@@ -135,29 +145,27 @@ continueButton1.onclick = () => {
         minimizeButton.style.display = "block";
         orderNumber++;
         let t = Math.floor(Math.random() * 6 + 1);
-        
-  switch(t){
 
-    case 1 :
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[0].img})`;    
-        break;
-        case 2:
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[1].img})`;
-        break;
-        case 3:
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[2].img})`;
-        break;
-        case 4:
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[3].img})`;
-        break;
-        case 5:
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[4].img})`;
-        break;
-        case 6:
-        BA.style.backgroundImage = `url(${dataWeapons.weapons[5].img})`;
-        break;
-  }
-
+        switch (t) {
+          case 1:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[0].img})`;
+            break;
+          case 2:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[1].img})`;
+            break;
+          case 3:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[2].img})`;
+            break;
+          case 4:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[3].img})`;
+            break;
+          case 5:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[4].img})`;
+            break;
+          case 6:
+            BA.style.backgroundImage = `url(${dataWeapons.weapons[5].img})`;
+            break;
+        }
       };
 
       break;
@@ -175,5 +183,28 @@ continueButton1.onclick = () => {
   scrollButton.onclick = () => {
     order.style.display = "block";
     scrollButton.style.display = "none";
-  }
+  };
 };
+
+
+
+function newCustomer(){
+  let t = Math.floor(Math.random() * 3 + 1);
+  
+switch (t) {
+  case 1:
+    customerBody.style.backgroundImage = `url(${dataCustomer.body[0].img})`;
+    headChosing();
+    break;
+    case 2:
+      customerBody.style.backgroundImage = `url(${dataCustomer.body[1].img})`;
+      headChosing();
+         
+    break;
+    case 3:
+      customerBody.style.backgroundImage = `url(${dataCustomer.body[2].img})`;
+      headChosing();
+    break;
+    
+}
+}

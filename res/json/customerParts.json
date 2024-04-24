@@ -1,29 +1,24 @@
 {
-    "BodyParts": [
-      
-      
-          {
-          
-            "img" : "./res/img/longSwordSchema.jpg"
-          },
-          {
-           
-            "img" : "./res/img/longSwordSchema.jpg"
-          },
-        
-      
-      
-  
-          {
-            
-            "img" : "./res/img/longSwordSchema.jpg"
-          },
-          {
-           
-            "img" : "./res/img/longSwordSchema.jpg"
-          }
-        
-      
-          
-         ]
-  }
+  "body": [
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    },
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    },
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    }
+  ],
+  "head": [
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    },
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    },
+    {
+      "img": "./res/img/longSwordSchema.jpg"
+    }
+  ]
+}

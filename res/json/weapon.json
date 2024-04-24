@@ -1,38 +1,24 @@
 {
-  
-      "weapons": [
-        {
-          
-          "img" : "./res/img/BattleAxe.png"
-        },
-        {
-          
-          "img" : "./res/img/axe.png"
-        },
-      
-    
-    
-     
-        {
-          
-          "img" : "./res/img/longSwordSchema.png"
-        },
-        {
-          
-          "img" : "./res/img/ShortSword.png"
-        },
-      
-    
-    
-      
-        {
-         
-          "img" : "./res/img/pickaxe.png"
-        },
-        {
-          
-          "img" : "./res/img/shovel.png"
-        }
-      ]
-   
+  "weapons": [
+    {
+      "img": "./res/img/BattleAxe.png"
+    },
+    {
+      "img": "./res/img/axe.png"
+    },
+
+    {
+      "img": "./res/img/longSwordSchema.png"
+    },
+    {
+      "img": "./res/img/ShortSword.png"
+    },
+
+    {
+      "img": "./res/img/pickaxe.png"
+    },
+    {
+      "img": "./res/img/shovel.png"
+    }
+  ]
 }
