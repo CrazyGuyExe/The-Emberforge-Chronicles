@@ -1,24 +1,30 @@
 {
   "weapons": [
     {
-      "img": "./res/img/BattleAxe.png"
+      "img": "./res/img/BattleAxe.png",
+      "name": "Battle Axe"
     },
     {
-      "img": "./res/img/axe.png"
-    },
-
-    {
-      "img": "./res/img/longSwordSchema.png"
-    },
-    {
-      "img": "./res/img/ShortSword.png"
+      "img": "./res/img/axe.png",
+      "name": "Axe"
     },
 
     {
-      "img": "./res/img/pickaxe.png"
+      "img": "./res/img/longSwordSchema.png",
+      "name": "Long Sword"
     },
     {
-      "img": "./res/img/shovel.png"
+      "img": "./res/img/ShortSword.png",
+      "name": "Short Sword"
+    },
+
+    {
+      "img": "./res/img/pickaxe.png",
+      "name": "Pickaxe"
+    },
+    {
+      "img": "./res/img/shovel.png",
+      "name": "Shovel"
     }
   ]
 }

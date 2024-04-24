@@ -177,8 +177,8 @@
 #minimize {
   position: absolute;
   display: none;
-  margin-left: 1vw;
-  margin-top: 1vh;
+  margin-left: 9vw;
+  margin-top: 60vh;
   cursor: pointer;
   font-family: "fantasy";
   font-size: 50px;
@@ -197,19 +197,19 @@
 #orders {
   position: absolute;
   display: none;
-  background-color: bisque;
-  border: 2px solid black;
-  width: 20vw;
-  height: 50vh;
-  margin-left: 77vw;
-  margin-top: 5vh;
+  background-image: url("../img/orderScroll.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 25vw;
+  height: 70vh;
+  margin-left: 73vw;
+  margin-top: 0vh;
 }
 
 #miniOrder {
-  width: 12vw;
-  margin-left: 81vw;
+  width: 25vw;
+  margin-left: 73vw;
   margin-top: 1vh;
-  rotate: 30deg;
   position: absolute;
   display: none;
   cursor: pointer;
@@ -219,5 +219,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   height: 50vh;
-  margin-left: 6vw;
+  margin-top: 10vh;
+  margin-left: 9vw;
 }
