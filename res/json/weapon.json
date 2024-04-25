@@ -2,16 +2,16 @@
   "weapons": [
     {
       "img": "./res/img/BattleAxe.png",
-      "castedImg": "./res/img/goodBronzeLongSword.png",
-      "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg": "./res/img/goodBronzeBattleAxe.png",
+      "castedImg2": "./res/img/goodIronBattleAxe.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Battle Axe"
     },
     {
       "img": "./res/img/axe.png",
-      "castedImg": "./res/img/goodBronzeLongSword.png",
-      "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg": "./res/img/goodBronzeAxe.png",
+      "castedImg2": "./res/img/goodIronAxe.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Axe"
     },
 
@@ -19,29 +19,29 @@
       "img": "./res/img/longSwordSchema.png",
       "castedImg": "./res/img/goodBronzeLongSword.png",
       "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Long Sword"
     },
     {
       "img": "./res/img/ShortSword.png",
-      "castedImg": "./res/img/goodBronzeLongSword.png",
-      "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg": "./res/img/goodBronzeShortSword.png",
+      "castedImg2": "./res/img/goodIronShortSword.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Short Sword"
     },
 
     {
       "img": "./res/img/pickaxe.png",
-      "castedImg": "./res/img/goodBronzeLongSword.png",
-      "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg": "./res/img/goodBronzePickaxe.png",
+      "castedImg2": "./res/img/goodIronPickaxe.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Pickaxe"
     },
     {
       "img": "./res/img/shovel.png",
-      "castedImg": "./res/img/goodBronzeLongSword.png",
-      "castedImg2": "./res/img/goodIronLongSword.png",
-      "castedImg3": "./res/img/goodIronLongSword.png",
+      "castedImg": "./res/img/goodBronzeShovel.png",
+      "castedImg2": "./res/img/goodIronShovel.png",
+      "castedImg3": "./res/img/goodGoldLongSword.png",
       "name": "Shovel"
     }
   ]

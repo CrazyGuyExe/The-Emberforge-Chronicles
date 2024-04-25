@@ -47,6 +47,7 @@ let ore = 0;
 let timeToSmelt = 0;
 let smeltingFinish = 0;
 let wellSmelted = 0;
+let takeOutState = 0;
 
 let dataWeapons = new Object();
 let dataCustomer = new Object();
@@ -134,12 +135,77 @@ function smeltingEvaluation(){
             }
           break;
       }
-    }else{
+    }else{ 
+      switch(weapon){
+      case 1:
+        switch(ore){
+          case 1:
+            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg})`;
+        break;
+        case 2:
+          castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg2})`;
+          break;
+          case 3:
+            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg3})`;
+            break;
+        }
+        break;
+      case 2:
+          switch(ore){
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg})`;
+          break;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg2})`;
+            break;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg3})`;
+            break;
+          }
+          break;
+        case 3:
+            switch(ore){
+              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg})`;
+            break;
+            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg2})`;
+              break;
+              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg3})`;
+              break;
+            }
+        break;
+        case 4:
+          switch(ore){
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg})`;
+          break;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg2})`;
+            break;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg3})`;
+            break;
+          }
+        break;
+        case 5:
+          switch(ore){
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg})`;
+          break;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg2})`;
+            break;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg3})`;
+            break;
+          }
+        break;
+        case 6:
+          switch(ore){
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg})`;
+          break;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg2})`;
+            break;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg3})`;
+            break;
+          }
+        break;
 
     }
-  }else{
-
   }
+ }else{
+  
+ }
 }
 
 function smeltingTimer(){
@@ -149,7 +215,7 @@ if(timeToSmelt<=15){
 markTimer.style.backgroundColor="orange";
 }else if(timeToSmelt<=25){
   markTimer.style.backgroundColor="green";
-  takeOut.style.display = "flex";
+  
 }else{
   markTimer.style.backgroundColor="red";
   
@@ -165,7 +231,7 @@ function crucibleValidation() {
       crucible.style.width = "20vw";
       crucible.style.height = "35vh";
       crucible.style.marginTop = "30vh";
-      crucible.style.marginLeft = "40vw";
+      crucible.style.marginLeft = "42vw";
       break;
     case 2:
       crucible.style.backgroundImage = "url(./res/img/kotlíkTavení.png)";
@@ -175,12 +241,12 @@ function crucibleValidation() {
       crucible.style.marginLeft = "52vw";
       break;
     case 3:
-      crucible.style.backgroundImage = "url(./res/img/kotlík.png)";
+      crucible.style.backgroundImage = "url(./res/img/kotlíkHot.png)";
 
       crucible.style.width = "20vw";
       crucible.style.height = "35vh";
       crucible.style.marginTop = "30vh";
-      crucible.style.marginLeft = "40vw";
+      crucible.style.marginLeft = "42vw";
       break;
   }
 }
