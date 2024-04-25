@@ -140,63 +140,63 @@ function smeltingEvaluation(){
       case 1:
         switch(ore){
           case 1:
-            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg})`;
+            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg})`;
         break;
         case 2:
-          castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg2})`;
+          castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg2})`;
           break;
           case 3:
-            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg3})`;
+            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg3})`;
             break;
         }
         break;
       case 2:
           switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg})`;
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg})`;
           break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg2})`;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg2})`;
             break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg3})`;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg3})`;
             break;
           }
           break;
         case 3:
             switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg})`;
+              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg})`;
             break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg2})`;
+            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg2})`;
               break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg3})`;
+              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg3})`;
               break;
             }
         break;
         case 4:
           switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg})`;
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg})`;
           break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg2})`;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg2})`;
             break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg3})`;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg3})`;
             break;
           }
         break;
         case 5:
           switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg})`;
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg})`;
           break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg2})`;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg2})`;
             break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg3})`;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg3})`;
             break;
           }
         break;
         case 6:
           switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg})`;
+            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg})`;
           break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg2})`;
+          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg2})`;
             break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg3})`;
+            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg3})`;
             break;
           }
         break;
