@@ -219,6 +219,92 @@
   background-size: contain;
   background-repeat: no-repeat;
   height: 50vh;
-  margin-top: 10vh;
-  margin-left: 9vw;
+ 
+
 }
+
+#forgery{
+  position: absolute;
+  display: none;
+}
+
+#crucible{
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.weaponCasts{
+  width: 5vw;
+  height: 10vh;
+  border: 1px solid black;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+.oreChoose{
+  width: 5vw;
+  height: 10vh;
+  border: 1px solid black;
+  background-color: bisque;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+#castText{
+  position: absolute;
+  rotate: 90deg;
+  margin-left: 7vw;
+  margin-top: 28vh;
+  font-size: 125px;
+  color: aliceblue;
+}
+
+#oreText{
+  
+    position: absolute;
+    rotate: 90deg;
+    margin-left: 7vw;
+    margin-top: 23vh;
+    font-size: 125px;
+    color: aliceblue;
+    display: none;
+  
+  
+}
+
+#mark{
+  position: absolute;
+  display: none;
+  width: 3vw;
+  height: 6vh;
+  border: solid black 2px;
+  border-radius: 30px;
+  margin-left: 55vw;
+  margin-top: 30vh;
+  background-color: orange;
+}
+
+#smeltingButton{
+  display: none;
+  position: absolute;
+  width: 5vw;
+  height: 5vh;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75vh;
+  margin-left: 52.5vw;
+  cursor: pointer;
+  border: solid black 2px;
+  background-color: green;
+}
+
+

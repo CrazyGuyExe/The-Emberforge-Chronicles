@@ -2,28 +2,46 @@
   "weapons": [
     {
       "img": "./res/img/BattleAxe.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Battle Axe"
     },
     {
       "img": "./res/img/axe.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Axe"
     },
 
     {
       "img": "./res/img/longSwordSchema.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Long Sword"
     },
     {
       "img": "./res/img/ShortSword.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Short Sword"
     },
 
     {
       "img": "./res/img/pickaxe.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Pickaxe"
     },
     {
       "img": "./res/img/shovel.png",
+      "castedImg": "./res/img/goodBronzeLongSword.png",
+      "castedImg2": "./res/img/goodIronLongSword.png",
+      "castedImg3": "./res/img/goodIronLongSword.png",
       "name": "Shovel"
     }
   ]
