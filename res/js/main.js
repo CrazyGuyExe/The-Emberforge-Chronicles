@@ -14,6 +14,7 @@ const markTimer = document.getElementById("mark");
 const takeOut = document.getElementById("smeltingButton");
 const deleteWeapon = document.getElementById("deleteButton");
 const smithingButton = document.getElementsByClassName("smithingButton");
+const finishButton = document.getElementById("finish")
 
 const mainMenu = document.getElementById("mainMenu");
 const counterViewT = document.getElementById("couterT");
@@ -28,7 +29,7 @@ const prologPart5 = document.getElementById("part4");
 const prologPart6 = document.getElementById("part5");
 const order = document.getElementById("orders");
 const sliderShow = document.getElementsByClassName("slidecontainer");
-const partOfWeapon = document.getElementsByClassName("partOfWeapon");
+const partOfWeapon = document.getElementById("handle");
 
 const BA = document.getElementById("partSchema");
 const BAN = document.getElementById("partName");
@@ -162,12 +163,23 @@ function smeltingEvaluation() {
           switch (ore) {
             case 1:
               castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg})`;
+              castedWeapon.style.marginLeft = "25vw";
+              castedWeapon.style.marginTop = "50vh";
+              castedWeapon.style.width = "30vw";
+              castedWeapon.style.height = "20vh";
               break;
             case 2:
               castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg2})`;
+              castedWeapon.style.marginLeft = "25vw";
+              castedWeapon.style.marginTop = "50vh";
+              castedWeapon.style.width = "30vw";
+              castedWeapon.style.height = "20vh";
               break;
             case 3:
               castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg3})`;
+              castedWeapon.style.marginLeft = "24vw";
+              castedWeapon.style.marginTop = "18vh";
+              castedWeapon.style.rotate = "270deg";
               break;
           }
           break;
@@ -467,25 +479,22 @@ continueButton1.onclick = () => {
         mainButtons[2].style.display = "none";
 
         for (i = 0; i <= 4; i++) {
-          if (notGenerated) {                       
-          
-          let t = Math.floor(Math.random() * 50 + 15);
-          let y = Math.floor(Math.random() * 50 + 15);
-          smithingButton[i].style.marginLeft = t + "vw";
-          smithingButton[i].style.marginTop = y + "vh";
-          notGenerated = false;
+          if (notGenerated) {
+            let t = Math.floor(Math.random() * 50 + 15);
+            let y = Math.floor(Math.random() * 50 + 15);
+            smithingButton[i].style.marginLeft = t + "vw";
+            smithingButton[i].style.marginTop = y + "vh";
+            notGenerated = false;
+          }
         }
-        }
-        if (wellSmelted == 2 &&seen == 0) {
+        if (wellSmelted == 2 && seen == 0) {
           smithingButton[0].style.display = "block";
-            smithingButton[1].style.display = "block";
-            smithingButton[2].style.display = "block";
-            smithingButton[3].style.display = "block";
-            smithingButton[4].style.display = "block";
-        seen = 1;
-        }
-
-        else {
+          smithingButton[1].style.display = "block";
+          smithingButton[2].style.display = "block";
+          smithingButton[3].style.display = "block";
+          smithingButton[4].style.display = "block";
+          seen = 1;
+        } else {
         }
         castedWeapon.style.display = "block";
         if (weapon != 0 && smeltingFinish == 1) {
@@ -715,92 +724,89 @@ smithingButton[4].onclick = () => {
 };
 
 function smithedValidationWaves() {
-if(smithed==5){
-  smithingButton[0].style.display = "block";
-  smithingButton[1].style.display = "block";
-  smithingButton[2].style.display = "block";
-  smithingButton[3].style.display = "block";
-  smithingButton[4].style.display = "block";
+  if (smithed == 5) {
+    smithingButton[0].style.display = "block";
+    smithingButton[1].style.display = "block";
+    smithingButton[2].style.display = "block";
+    smithingButton[3].style.display = "block";
+    smithingButton[4].style.display = "block";
     for (i = 0; i <= 4; i++) {
       let t = Math.floor(Math.random() * 50 + 15);
       let y = Math.floor(Math.random() * 50 + 15);
       smithingButton[i].style.marginLeft = t + "vw";
       smithingButton[i].style.marginTop = y + "vh";
     }
-}else if(smithed==10){
-  
+  } else if (smithed == 10) {
     smithingButton[0].style.display = "block";
     smithingButton[1].style.display = "block";
     smithingButton[2].style.display = "block";
     smithingButton[3].style.display = "block";
     smithingButton[4].style.display = "block";
-      for (i = 0; i <= 4; i++) {
-        let t = Math.floor(Math.random() * 50 + 15);
-        let y = Math.floor(Math.random() * 50 + 15);
-        smithingButton[i].style.marginLeft = t + "vw";
-        smithingButton[i].style.marginTop = y + "vh";
-      }
-  }else {
-    
+    for (i = 0; i <= 4; i++) {
+      let t = Math.floor(Math.random() * 50 + 15);
+      let y = Math.floor(Math.random() * 50 + 15);
+      smithingButton[i].style.marginLeft = t + "vw";
+      smithingButton[i].style.marginTop = y + "vh";
+    }
+  } else if(smithed==15){
+    partOfWeapon.style.display = "flex";
+    switch(weapon){
+      case 1: 
+      partOfWeapon.style.background = `url(${dataWeapons.weapons[0].handle})`;
+      break;
+      case 2:
+        partOfWeapon.style.background = `url(${dataWeapons.weapons[1].handle})`;
+        break;
+        case 3:
+          partOfWeapon.style.background = `url(${dataWeapons.weapons[2].handle})`;
+          break;
+          case 4:
+            partOfWeapon.style.background = `url(${dataWeapons.weapons[3].handle})`;
+            break;
+            case 5:
+            partOfWeapon.style.background = `url(${dataWeapons.weapons[4].handle})`;
+              break;
+              case 6:
+                partOfWeapon.style.background = `url(${dataWeapons.weapons[5].handle})`;
+                break;
+    }
   }
 }
 
+let interval5 = Number();
 
+let mouseX = 0;
+let mouseY = 0;
+let crazy = false;
+let crazy2 = true;
 
+partOfWeapon.onclick = () => {
+  if (crazy2) {
+    interval5 = setInterval(() => {
+      partOfWeapon.style.marginTop = "15vh";
+      partOfWeapon.style.marginLeft = mouseX - 45 + "px";
+    }, 50);
+    setTimeout(() => {
+      crazy = true;
+    }, 50);
+  }
+};
 
+function printMousePos(event) {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+}
+function endOfFollow() {
+  if (crazy2) {
+  if (crazy) {
+    clearInterval(interval5);
+    partOfWeapon.style.marginTop = "30vh";
+    partOfWeapon.style.marginLeft = mouseX - 45 + "px";
+    crazy2 = false;
+    finishButton.style.display = "block";
+  }
+}
+}
 
-let offset = [0, 0];
-let mousePos;
-let isDown = false;
-
-this.sauceInstance.addEventListener(
-  "mousedown",
-  (e) => {
-    isDown = true;
-    offset = [
-      this.sauceInstance.offsetLeft - e.clientX,
-      this.sauceInstance.offsetTop - e.clientY,
-    ];
-  },
-  true
-);
-document.addEventListener(
-  "mouseup",
-  () => {
-    isDown = false;
-    if (this.isAbovePlate()) {
-      if (burgerExists && !burger.finished) {
-        burger.addIngredient(this.type + 6);
-      }
-      this.sauceInstance.remove();
-      new Sauce(this.type);
-      return;
-    }
-    this.sauceInstance.style.left = this.leftOffset + "%";
-    this.sauceInstance.style.top = 60 + "%";
-  },
-  true
-);
-document.addEventListener(
-  "mousemove",
-  (event) => {
-    event.preventDefault();
-    if (isDown) {
-      mousePos = {
-        x: event.clientX,
-        y: event.clientY,
-      };
-      this.sauceInstance.style.left = mousePos.x + offset[0] + "px";
-      this.sauceInstance.style.top = mousePos.y + offset[1] + "px";
-    }
-  },
-  true
-);
-
-isAbovePlate() 
-let rect = this.sauceInstance.getBoundingClientRect();
-let plateRect = plate.getBoundingClientRect();
-return (
-  rect.x + rect.width / 2 > plateRect.x - 10 &&
-  rect.x < plateRect.x + plateRect.width - rect.width / 2
-);
+document.addEventListener("mousemove", printMousePos);
+document.addEventListener("click", endOfFollow);

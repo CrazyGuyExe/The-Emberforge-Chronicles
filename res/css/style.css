@@ -421,8 +421,21 @@ margin-top: 80vh;
   cursor: pointer;
 }
 
-.partOfWeapon{
+#handle{
+  display: none;
   position:absolute;
   width: 5vw;
-  height: 10vh;
+  height: 30vh;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+#finish{
+  display: none;
+  position: absolute;
+width: 5vw;
+height: 5vh;
+border: solid black 2px;
+background-color: #04AA6D;
 }

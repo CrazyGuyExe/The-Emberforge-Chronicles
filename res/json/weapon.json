@@ -4,20 +4,22 @@
       "img": "./res/img/BattleAxe.png",
       "castedImg": "./res/img/goodBronzeBattleAxe.png",
       "castedImg2": "./res/img/goodIronBattleAxe.png",
-      "castedImg3": "./res/img/goodGoldLongSword.png",
+      "castedImg3": "./res/img/goodGoldBattleAxe.png",
       "castedBadImg": "./res/img/badBronzeBattleAxe.png",
       "castedBadImg2": "./res/img/badIronBattleAxe.png",
-      "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "castedBadImg3": "./res/img/badGoldBattleAxe.png",
+      "handle": "./res/img/battleAxeHandle.png",
       "name": "Battle Axe"
     },
     {
       "img": "./res/img/axe.png",
       "castedImg": "./res/img/goodBronzeAxe.png",
       "castedImg2": "./res/img/goodIronAxe.png",
-      "castedImg3": "./res/img/goodGoldLongSword.png",
+      "castedImg3": "./res/img/goodGoldAxe.png",
       "castedBadImg": "./res/img/badBronzeAxe.png",
       "castedBadImg2": "./res/img/badIronAxe.png",
-      "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "castedBadImg3": "./res/img/badGoldAxe.png",
+      "handle": "./res/img/axeHandle.png",
       "name": "Axe"
     },
 
@@ -29,16 +31,18 @@
       "castedBadImg": "./res/img/badBronzeLongSword.png",
       "castedBadImg2": "./res/img/badIronLongSword.png",
       "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "handle": "./res/img/longSwordHandle.png",
       "name": "Long Sword"
     },
     {
       "img": "./res/img/ShortSword.png",
       "castedImg": "./res/img/goodBronzeShortSword.png",
       "castedImg2": "./res/img/goodIronShortSword.png",
-      "castedImg3": "./res/img/goodGoldLongSword.png",
+      "castedImg3": "./res/img/goodGoldShortSword.png",
       "castedBadImg": "./res/img/badBronzeShortSword.png",
       "castedBadImg2": "./res/img/badIronShortSword.png",
-      "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "castedBadImg3": "./res/img/badGoldShortSword.png",
+      "handle": "./res/img/shortSwordHandle.png",
       "name": "Short Sword"
     },
 
@@ -46,20 +50,22 @@
       "img": "./res/img/pickaxe.png",
       "castedImg": "./res/img/goodBronzePickaxe.png",
       "castedImg2": "./res/img/goodIronPickaxe.png",
-      "castedImg3": "./res/img/goodGoldLongSword.png",
+      "castedImg3": "./res/img/goodGoldPickaxe.png",
        "castedBadImg": "./res/img/badBronzePickaxe.png",
       "castedBadImg2": "./res/img/badIronPickaxe.png",
-      "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "castedBadImg3": "./res/img/badGoldPickaxe.png",
+      "handle": "./res/img/pickaxeHandle.png",
       "name": "Pickaxe"
     },
     {
       "img": "./res/img/shovel.png",
       "castedImg": "./res/img/goodBronzeShovel.png",
       "castedImg2": "./res/img/goodIronShovel.png",
-      "castedImg3": "./res/img/goodGoldLongSword.png",
+      "castedImg3": "./res/img/goodGoldShovel.png",
       "castedBadImg": "./res/img/badBronzeShovel.png",
       "castedBadImg2": "./res/img/badIronShovel.png",
-      "castedBadImg3": "./res/img/badGoldLongSword.png",
+      "castedBadImg3": "./res/img/badGoldShovel.png",
+      "handle": "./res/img/shovelHandle.png",
       "name": "Shovel"
     }
   ]
