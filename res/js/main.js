@@ -9,9 +9,11 @@ const casts = document.getElementsByClassName("weaponCasts");
 const ores = document.getElementsByClassName("oreChoose");
 const castsMain = document.getElementById("casts");
 const oresMain = document.getElementById("ores");
-const oreText = document.getElementById("oreText")
-const markTimer = document.getElementById("mark")
-const takeOut = document.getElementById("smeltingButton")
+const oreText = document.getElementById("oreText");
+const markTimer = document.getElementById("mark");
+const takeOut = document.getElementById("smeltingButton");
+const deleteWeapon = document.getElementById("deleteButton");
+const smithingButton = document.getElementsByClassName("smithingButton");
 
 const mainMenu = document.getElementById("mainMenu");
 const counterViewT = document.getElementById("couterT");
@@ -25,10 +27,12 @@ const prologPart4 = document.getElementById("part3");
 const prologPart5 = document.getElementById("part4");
 const prologPart6 = document.getElementById("part5");
 const order = document.getElementById("orders");
+const sliderShow = document.getElementsByClassName("slidecontainer");
+const partOfWeapon = document.getElementsByClassName("partOfWeapon");
 
 const BA = document.getElementById("partSchema");
 const BAN = document.getElementById("partName");
-const castedWeapon = document.getElementById("castedWeapons")
+const castedWeapon = document.getElementById("castedWeapons");
 const customerBody = document.getElementById("customerBody");
 const customerHead = document.getElementById("customerHead");
 const crucible = document.getElementById("crucible");
@@ -38,6 +42,11 @@ const Rey = document.getElementById("Reynauld");
 
 const creator = document.getElementById("creator");
 
+const slider = document.getElementById("myRange");
+const slider2 = document.getElementById("myRange2");
+let maxValidation = 0;
+let maxValidation2 = 0;
+
 let gameOn = 0;
 let numberOfClicks = 0;
 let orderNumber = 0;
@@ -45,12 +54,25 @@ let crucibleState = 0;
 let weapon = 0;
 let ore = 0;
 let timeToSmelt = 0;
+let timeToCast = 0;
 let smeltingFinish = 0;
 let wellSmelted = 0;
 let takeOutState = 0;
+let interval = Number();
+let interval2 = Number();
+let blowerValidation = true;
+let notGenerated = true;
+let smithed = 0;
+let seen = 0;
+
+let speedOfCasting = 10;
+let castFullnes = 0;
+let castReadines = true;
 
 let dataWeapons = new Object();
 let dataCustomer = new Object();
+
+let castingValidation = true;
 
 window.onload = async () => {
   document.body.style.backgroundImage = "url(./res/img/mainMenu.jpg)";
@@ -67,160 +89,255 @@ window.onload = async () => {
   }
 };
 
-function smeltingEvaluation(){
-  if(smeltingFinish == 1){
-    if(wellSmelted==2){
-      switch(weapon){
+slider.oninput = function () {
+  maxValidation = this.value;
+  blower();
+};
+
+slider2.oninput = function () {
+  maxValidation2 = this.value;
+  casting();
+};
+
+function blower() {
+  if (maxValidation >= 70 && blowerValidation) {
+    timeToSmelt++;
+    timeToSmelt++;
+    console.log(timeToSmelt);
+    blowerValidation = false;
+    console.log("ano");
+  } else if (maxValidation <= 30) {
+    blowerValidation = true;
+    console.log("ne");
+  }
+}
+
+function casting() {
+  if (castingValidation) {
+    castingTimer();
+    castingValidation = false;
+  }
+  if (speedOfCasting > 100) {
+    clearInterval(interval2);
+  }
+  if (castFullnes >= 90) {
+    slider2.style.display = "none";
+    wellSmelted = 2;
+    castReadines = false;
+    smeltingEvaluation();
+  }
+  if (castFullnes > speedOfCasting && castReadines) {
+    wellSmelted = 0;
+    smeltingEvaluation();
+  }
+  if (castFullnes < maxValidation2) {
+    castFullnes = maxValidation2;
+  }
+}
+
+deleteWeapon.onclick = () => {
+  weapon = 0;
+  ore = 0;
+  wellSmelted = 0;
+  crucibleState = 0;
+  castedWeapon.style.backgroundImage = "none";
+  castedWeapon.style.display = "none";
+  deleteWeapon.style.display = "none";
+  console.log("deleted");
+};
+
+function castingTimer() {
+  interval2 = setInterval(() => {
+    if (speedOfCasting - 20 >= castFullnes) {
+      speedOfCasting += 10;
+    }
+  }, 500);
+}
+
+function smeltingEvaluation() {
+  if (smeltingFinish == 1) {
+    if (wellSmelted == 2) {
+      switch (weapon) {
         case 1:
-          switch(ore){
+          switch (ore) {
             case 1:
               castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg})`;
-          break;
-          case 2:
-            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg2})`;
-            break;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg2})`;
+              break;
             case 3:
               castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedImg3})`;
               break;
           }
           break;
         case 2:
-            switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg})`;
-            break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg2})`;
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg})`;
               break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg3})`;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg2})`;
               break;
-            }
-            break;
-          case 3:
-              switch(ore){
-                case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg})`;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedImg3})`;
               break;
-              case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg2})`;
-                break;
-                case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg3})`;
-                break;
-              }
-          break;
-          case 4:
-            switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg})`;
-            break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg2})`;
-              break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg3})`;
-              break;
-            }
-          break;
-          case 5:
-            switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg})`;
-            break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg2})`;
-              break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg3})`;
-              break;
-            }
-          break;
-          case 6:
-            switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg})`;
-            break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg2})`;
-              break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg3})`;
-              break;
-            }
-          break;
-      }
-    }else{ 
-      switch(weapon){
-      case 1:
-        switch(ore){
-          case 1:
-            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg})`;
-        break;
-        case 2:
-          castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg2})`;
-          break;
-          case 3:
-            castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg3})`;
-            break;
-        }
-        break;
-      case 2:
-          switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg})`;
-          break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg2})`;
-            break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg3})`;
-            break;
           }
           break;
         case 3:
-            switch(ore){
-              case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg})`;
-            break;
-            case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg2})`;
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg})`;
+              castedWeapon.style.marginleft = "20vw";
+              castedWeapon.style.rotate = "180deg";
               break;
-              case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg3})`;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg2})`;
               break;
-            }
-        break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedImg3})`;
+              break;
+          }
+          break;
         case 4:
-          switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg})`;
-          break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg2})`;
-            break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg3})`;
-            break;
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedImg3})`;
+              break;
           }
-        break;
+          break;
         case 5:
-          switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg})`;
-          break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg2})`;
-            break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg3})`;
-            break;
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedImg3})`;
+              break;
           }
-        break;
+          break;
         case 6:
-          switch(ore){
-            case 1:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg})`;
-          break;
-          case 2:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg2})`;
-            break;
-            case 3:castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg3})`;
-            break;
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedImg3})`;
+              break;
           }
-        break;
-
+          break;
+      }
+    } else {
+      switch (weapon) {
+        case 1:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[0].castedBadImg3})`;
+              break;
+          }
+          break;
+        case 2:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[1].castedBadImg3})`;
+              break;
+          }
+          break;
+        case 3:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[2].castedBadImg3})`;
+              break;
+          }
+          break;
+        case 4:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[3].castedBadImg3})`;
+              break;
+          }
+          break;
+        case 5:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[4].castedBadImg3})`;
+              break;
+          }
+          break;
+        case 6:
+          switch (ore) {
+            case 1:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg})`;
+              break;
+            case 2:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg2})`;
+              break;
+            case 3:
+              castedWeapon.style.backgroundImage = `url(${dataWeapons.weapons[5].castedBadImg3})`;
+              break;
+          }
+          break;
+      }
     }
+  } else {
   }
- }else{
-  
- }
 }
 
-function smeltingTimer(){
-const interval =  setInterval(() => {
-timeToSmelt++
-if(timeToSmelt<=15){
-markTimer.style.backgroundColor="orange";
-}else if(timeToSmelt<=25){
-  markTimer.style.backgroundColor="green";
-  
-}else{
-  markTimer.style.backgroundColor="red";
-  
-}
-  }, 1000)
+function smeltingTimer() {
+  interval = setInterval(() => {
+    console.log("ahoj");
+    timeToSmelt++;
+    if (timeToSmelt <= 15) {
+      markTimer.style.backgroundColor = "orange";
+    } else if (timeToSmelt <= 25) {
+      markTimer.style.backgroundColor = "green";
+      takeOut.style.display = "flex";
+    } else {
+      markTimer.style.backgroundColor = "red";
+    }
+  }, 1000);
 }
 
 function crucibleValidation() {
@@ -327,6 +444,13 @@ continueButton1.onclick = () => {
         forgeView.style.display = "none";
         workshopViewT.style.display = "none";
         arrowButton.style.display = "none";
+        castedWeapon.style.display = "none";
+        deleteWeapon.style.display = "none";
+        smithingButton[0].style.display = "none";
+        smithingButton[1].style.display = "none";
+        smithingButton[2].style.display = "none";
+        smithingButton[3].style.display = "none";
+        smithingButton[4].style.display = "none";
         if (orderNumber % 2 == 0) {
           mainButtons[2].style.display = "block";
         } else {
@@ -338,8 +462,35 @@ continueButton1.onclick = () => {
         forgeView.style.display = "none";
         counterViewT.style.display = "none";
         workshopViewT.style.display = "block";
+
         arrowButton.style.display = "block";
         mainButtons[2].style.display = "none";
+
+        for (i = 0; i <= 4; i++) {
+          if (notGenerated) {                       
+          
+          let t = Math.floor(Math.random() * 50 + 15);
+          let y = Math.floor(Math.random() * 50 + 15);
+          smithingButton[i].style.marginLeft = t + "vw";
+          smithingButton[i].style.marginTop = y + "vh";
+          notGenerated = false;
+        }
+        }
+        if (wellSmelted == 2 &&seen == 0) {
+          smithingButton[0].style.display = "block";
+            smithingButton[1].style.display = "block";
+            smithingButton[2].style.display = "block";
+            smithingButton[3].style.display = "block";
+            smithingButton[4].style.display = "block";
+        seen = 1;
+        }
+
+        else {
+        }
+        castedWeapon.style.display = "block";
+        if (weapon != 0 && smeltingFinish == 1) {
+          deleteWeapon.style.display = "flex";
+        }
       };
       mainButtons[2].onclick = () => {
         mainButtons[2].style.display = "none";
@@ -395,6 +546,12 @@ continueButton1.onclick = () => {
     crucibleValidation();
     forgeView.style.display = "block";
     workshopViewT.style.display = "none";
+    castedWeapon.style.display = "none";
+    smithingButton[0].style.display = "none";
+    smithingButton[1].style.display = "none";
+    smithingButton[2].style.display = "none";
+    smithingButton[3].style.display = "none";
+    smithingButton[4].style.display = "none";
   };
 
   casts[0].onclick = () => {
@@ -463,7 +620,8 @@ continueButton1.onclick = () => {
     oresMain.style.display = "none";
     crucibleState = 2;
     crucibleValidation();
-    markTimer.style.display="block";
+    markTimer.style.display = "block";
+    sliderShow[0].style.display = "block";
     smeltingTimer();
   };
   ores[1].onclick = () => {
@@ -471,7 +629,8 @@ continueButton1.onclick = () => {
     oresMain.style.display = "none";
     crucibleState = 2;
     crucibleValidation();
-    markTimer.style.display="block";
+    markTimer.style.display = "block";
+    sliderShow[0].style.display = "block";
     smeltingTimer();
   };
   ores[2].onclick = () => {
@@ -479,7 +638,8 @@ continueButton1.onclick = () => {
     oresMain.style.display = "none";
     crucibleState = 2;
     crucibleValidation();
-    markTimer.style.display="block";
+    markTimer.style.display = "block";
+    sliderShow[0].style.display = "flex";
     smeltingTimer();
   };
 
@@ -494,18 +654,24 @@ continueButton1.onclick = () => {
   };
 };
 
-takeOut.onclick = ()=> {
-takeOut.style.display = "none";
-crucibleState = 3;
-smeltingFinish = 1;
-
-crucibleValidation();
-markTimer.style.display = "none";
-
+takeOut.onclick = () => {
+  takeOut.style.display = "none";
+  crucibleState = 3;
+  smeltingFinish = 1;
+  clearInterval(interval);
+  crucibleValidation();
+  markTimer.style.display = "none";
+  sliderShow[0].style.display = "none";
+  sliderShow[1].style.display = "flex";
+  if (timeToSmelt <= 25) {
+    wellSmelted = 1;
+  } else {
+  }
 };
 
 function newCustomer() {
   let t = Math.floor(Math.random() * 3 + 1);
+  mainButtons[2].style.display = "block";
 
   switch (t) {
     case 1:
@@ -522,3 +688,119 @@ function newCustomer() {
       break;
   }
 }
+smithingButton[0].onclick = () => {
+  smithingButton[0].style.display = "none";
+  smithed++;
+  smithedValidationWaves();
+};
+smithingButton[1].onclick = () => {
+  smithingButton[1].style.display = "none";
+  smithed++;
+  smithedValidationWaves();
+};
+smithingButton[2].onclick = () => {
+  smithingButton[2].style.display = "none";
+  smithed++;
+  smithedValidationWaves();
+};
+smithingButton[3].onclick = () => {
+  smithingButton[3].style.display = "none";
+  smithed++;
+  smithedValidationWaves();
+};
+smithingButton[4].onclick = () => {
+  smithingButton[4].style.display = "none";
+  smithed++;
+  smithedValidationWaves();
+};
+
+function smithedValidationWaves() {
+if(smithed==5){
+  smithingButton[0].style.display = "block";
+  smithingButton[1].style.display = "block";
+  smithingButton[2].style.display = "block";
+  smithingButton[3].style.display = "block";
+  smithingButton[4].style.display = "block";
+    for (i = 0; i <= 4; i++) {
+      let t = Math.floor(Math.random() * 50 + 15);
+      let y = Math.floor(Math.random() * 50 + 15);
+      smithingButton[i].style.marginLeft = t + "vw";
+      smithingButton[i].style.marginTop = y + "vh";
+    }
+}else if(smithed==10){
+  
+    smithingButton[0].style.display = "block";
+    smithingButton[1].style.display = "block";
+    smithingButton[2].style.display = "block";
+    smithingButton[3].style.display = "block";
+    smithingButton[4].style.display = "block";
+      for (i = 0; i <= 4; i++) {
+        let t = Math.floor(Math.random() * 50 + 15);
+        let y = Math.floor(Math.random() * 50 + 15);
+        smithingButton[i].style.marginLeft = t + "vw";
+        smithingButton[i].style.marginTop = y + "vh";
+      }
+  }else {
+    
+  }
+}
+
+
+
+
+
+let offset = [0, 0];
+let mousePos;
+let isDown = false;
+
+this.sauceInstance.addEventListener(
+  "mousedown",
+  (e) => {
+    isDown = true;
+    offset = [
+      this.sauceInstance.offsetLeft - e.clientX,
+      this.sauceInstance.offsetTop - e.clientY,
+    ];
+  },
+  true
+);
+document.addEventListener(
+  "mouseup",
+  () => {
+    isDown = false;
+    if (this.isAbovePlate()) {
+      if (burgerExists && !burger.finished) {
+        burger.addIngredient(this.type + 6);
+      }
+      this.sauceInstance.remove();
+      new Sauce(this.type);
+      return;
+    }
+    this.sauceInstance.style.left = this.leftOffset + "%";
+    this.sauceInstance.style.top = 60 + "%";
+  },
+  true
+);
+document.addEventListener(
+  "mousemove",
+  (event) => {
+    event.preventDefault();
+    if (isDown) {
+      mousePos = {
+        x: event.clientX,
+        y: event.clientY,
+      };
+      this.sauceInstance.style.left = mousePos.x + offset[0] + "px";
+      this.sauceInstance.style.top = mousePos.y + offset[1] + "px";
+    }
+  },
+  true
+);
+
+isAbovePlate() 
+let rect = this.sauceInstance.getBoundingClientRect();
+let plateRect = plate.getBoundingClientRect();
+return (
+  rect.x + rect.width / 2 > plateRect.x - 10 &&
+  rect.x < plateRect.x + plateRect.width - rect.width / 2
+);
